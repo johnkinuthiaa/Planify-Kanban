@@ -3,7 +3,10 @@ import TaskCard from "@/app/components/taskCard"
 
 const Page =()=>{
     return(
-        <div className={"flex w-full gap-2 rounded-xl [&>*]:w-[33.333%] [&>*]:flex [&>*]:flex-col "}>
+        <section className={"flex lg:w-[70%] items-center justify-between m-auto" +
+            " gap-2 rounded-xl [&>*]:w-[33.333%] [&>*]:border-l" +
+            " [&>*]:border-l-gray-700 [&>*]:p-2" +
+            "  [&>*]:flex [&>*]:flex-col  nth-[3]:border-r  nth-[3]:border-r-gray-700"}>
             <div>
                 <KanbanHeader title={'To-do'} total={18}/>
                 <TaskCard/>
@@ -49,7 +52,7 @@ const Page =()=>{
                 <TaskCard/>
             </div>
 
-        </div>
+        </section>
     )
 }
 export default Page

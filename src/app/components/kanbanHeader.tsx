@@ -1,3 +1,4 @@
+"use client"
 import { Add } from "@mui/icons-material"
 
 type KanbanHeaderProps ={
@@ -6,15 +7,14 @@ type KanbanHeaderProps ={
 }
 const KanbanHeader =({title,total}:KanbanHeaderProps)=>{
     return(
-        <div className={"flex bg-gray-400 justify-between p-2 mt-5 mb-5"}>
+        <div className={"flex bg-gray-400 justify-between p-2 mt-5 mb-5 text-white font-bold"}>
             <div className={"flex gap-2"}>
-                <div>{title}</div>
-                <div>{total}</div>
+                <div >{title}</div>
+                <p>{total}</p>
             </div>
             <div className={"flex gap-2"}>
-                <button><Add/> </button>
+                <button className={"cursor-pointer"}><Add/></button>
             </div>
-
         </div>
     )
 }
