@@ -1,8 +1,24 @@
 "use client"
 import {CalendarMonth, DesktopMac} from '@mui/icons-material';
 import FlagIcon from '@mui/icons-material/Flag'
+import { useDraggable } from '@dnd-kit/core';
+import {Task} from "@/types";
 
-const TaskCard =()=>{
+type TaskCardProps = {
+    task: Task;
+};
+
+
+const TaskCard =({ task }: TaskCardProps)=>{
+    const { attributes, listeners, setNodeRef, transform } = useDraggable({
+        id: task.id,
+    });
+
+    const style = transform
+        ? {
+            transform: `translate(${transform.x}px, ${transform.y}px)`,
+        }
+        : undefined;
     const percentage =40
     return(
         <>
@@ -10,7 +26,10 @@ const TaskCard =()=>{
             className={"flex flex-col cursor-pointer border mt-4 " +
                 " border-gray-800 rounded-xl shadow-xl p-4 w-full "}
             draggable={"true"}
-
+            ref={setNodeRef}
+            {...listeners}
+            {...attributes}
+            style={style}
         >
             <div className={"flex gap-4 p-1  mb-4 [&>*]:gap-1 "}>
                 <div className={"border-l-2 border-l-gray-500"}>To-do</div>

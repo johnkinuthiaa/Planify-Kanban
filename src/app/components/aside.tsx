@@ -6,23 +6,25 @@ import NoteAltIcon from '@mui/icons-material/NoteAlt';
 import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Image from 'next/image'
+import {usePathname} from "next/navigation";
 
 const Aside =()=>{
+    const pathname =usePathname();
     return(
         <aside className={"flex flex-col gap-2 justify-between fixed " +
             "w-72 border-r border-r-gray-800 h-full [&>div>*]:flex" +
             " [&>div>*]:justify-between [&>div>*]:flex-col p-4 text-gray-300"}>
             <div className={"[&>*>*]:cursor-pointer"}>
-                <div className={"[&>*]:flex gap-6 [&>*]:gap-2"}>
+                <div className={"[&>*]:flex gap-6 [&>*]:gap-2 [&>*]:p-4 [&>*]:rounded "}>
                     <a href={"/"}>
                         <HomeFilledIcon/>
                         <div>Dashboard</div>
                     </a>
-                    <a>
+                    <a className={`${pathname==="/tasks"&& "bg-blue-500"}`} href={"/tasks"}>
                         <TaskIcon/>
                         <div>Tasks</div>
                     </a>
-                    <a>
+                    <a className={`${pathname==="/notes"&& "bg-blue-500"}`} href={"/notes"}>
                         <NoteAltIcon/>
                         <div>Notes</div>
                     </a>
