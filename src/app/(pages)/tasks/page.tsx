@@ -1,7 +1,9 @@
+"use client"
 import KanbanHeader from "@/app/components/KanbanHeader"
-import TaskCard from "@/app/components/taskCard"
+import TaskColumn from "@/app/components/taskColumn";
 
 const Page =()=>{
+
     return(
         <main className={"flex flex-col m-auto ml-10 justify-between items-center "}>
             <div className={"font-bold mb-10"}>Tasks</div>
@@ -11,55 +13,19 @@ const Page =()=>{
                 "  [&>*]:flex [&>*]:flex-col  nth-[3]:border-r  nth-[3]:border-r-gray-800"}>
                 <div>
                     <KanbanHeader title={'To-do'} total={18}/>
-                    <div className={"w-full p-2"}>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                    </div>
+                    <TaskColumn/>
                 </div>
                 <div>
                     <KanbanHeader title={'In-Progress'} total={18}/>
-                    <div className={"w-full p-2"}>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                    </div>
+                    <TaskColumn/>
                 </div>
                 <div>
                     <KanbanHeader title={'Completed'} total={0}/>
-                    <div className={"w-full p-2"}>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                    </div>
+                    <TaskColumn/>
                 </div>
                 <div>
                     <KanbanHeader title={'Cancelled'} total={2}/>
-                    <div className={"w-full p-2"}>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                        <TaskCard/>
-                    </div>
+                    <TaskColumn/>
                 </div>
 
             </section>

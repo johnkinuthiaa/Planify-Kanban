@@ -1,12 +1,17 @@
+"use client"
 import {CalendarMonth, DesktopMac} from '@mui/icons-material';
 import FlagIcon from '@mui/icons-material/Flag'
 
 const TaskCard =()=>{
     const percentage =40
     return(
+        <>
         <div
             className={"flex flex-col cursor-pointer border mt-4 " +
-                " border-gray-800 rounded-xl shadow-xl p-4 w-full "}>
+                " border-gray-800 rounded-xl shadow-xl p-4 w-full "}
+            draggable={"true"}
+
+        >
             <div className={"flex gap-4 p-1  mb-4 [&>*]:gap-1 "}>
                 <div className={"border-l-2 border-l-gray-500"}>To-do</div>
                 <div className={"text-red-600"}> <span><FlagIcon/></span> High</div>
@@ -24,7 +29,10 @@ const TaskCard =()=>{
                     <div>{percentage} %</div>
                 </div>
             </div>
+
         </div>
+
+    </>
     )
 }
 export default TaskCard
