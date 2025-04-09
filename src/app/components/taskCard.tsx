@@ -6,7 +6,7 @@ const TaskCard =()=>{
     return(
         <div
             className={"flex flex-col cursor-pointer border mt-4 " +
-                " border-gray-700 rounded-xl shadow-xl p-4 w-full "}>
+                " border-gray-800 rounded-xl shadow-xl p-4 w-full "}>
             <div className={"flex gap-4 p-1  mb-4 [&>*]:gap-1 "}>
                 <div className={"border-l-2 border-l-gray-500"}>To-do</div>
                 <div className={"text-red-600"}> <span><FlagIcon/></span> High</div>
