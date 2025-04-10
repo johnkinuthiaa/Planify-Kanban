@@ -1,3 +1,4 @@
+
 type RegisterProps ={
     username:string,
     email:string,
@@ -22,7 +23,7 @@ export const RegisterUser = async ({username,email,password}:RegisterProps)=>{
             if(data.statusCode !=201){
                 return (`Error creating user: ${data?.message}`)
             }else{
-                localStorage?.setItem("User",JSON.stringify(data?.user))
+                localStorage.setItem("User",JSON.stringify(data?.user))
                 return ("User created successfully")
             }
         }

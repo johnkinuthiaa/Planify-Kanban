@@ -13,7 +13,7 @@ const Register =()=>{
         <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted p-6 md:p-10">
             <div className="flex w-full max-w-sm flex-col gap-6">
                 <a href="#" className="flex items-center gap-2 self-center font-medium">
-                    Planify Inc.
+                    Planify Signup.
                 </a>
                 {message &&<div>{message}</div>}
                 <form onSubmit={(e)=>{
@@ -69,6 +69,8 @@ const Register =()=>{
                                     placeholder="Kingkaid100"
                                     required={true}
                                     onChange={(e)=>setUsername(e.target.value)}
+                                    minLength={3}
+                                    maxLength={20}
                                 />
                             </div>
                             <div className="grid gap-2">
@@ -79,34 +81,32 @@ const Register =()=>{
                                     placeholder="m@example.com"
                                     required={true}
                                     onChange={(e)=>setEmail(e.target.value)}
+                                    minLength={6}
+                                    maxLength={20}
                                 />
                             </div>
                             <div className="grid gap-2">
                                 <div className="flex items-center">
                                     <label htmlFor="password">Password</label>
-                                    <a
-                                        href="#"
-                                        className="ml-auto text-sm underline-offset-4 hover:underline"
-                                    >
-                                        Forgot your password?
-                                    </a>
                                 </div>
                                 <input
                                     id="password"
                                     type="password"
                                     required={true}
                                     onChange={(e)=>setPassword(e.target.value)}
+                                    minLength={10}
+                                    maxLength={20}
                                 />
                             </div>
                             <button type="submit" className="w-full bg-white text-black rounded p-3
                             text-center font-bold cursor-pointer hover:bg-gray-300">
-                                Login
+                                Register
                             </button>
                         </div>
                         <div className="text-center text-sm">
-                            Don&apos;t have an account?{" "}
-                            <a href="#" className="underline underline-offset-4">
-                                Sign up
+                            Already have an account?{" "}
+                            <a href="/login" className="underline underline-offset-4">
+                                Login
                             </a>
                         </div>
                     </div>
